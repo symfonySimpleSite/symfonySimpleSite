@@ -1,0 +1,2 @@
+symfony_simple_site_page:
+  resource: '@PageBundle/Resources/config/routes/all.yaml'
