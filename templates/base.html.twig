@@ -7,94 +7,14 @@
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
             {#{{ encore_entry_link_tags('app') }}#}
-
-            <style>
-
-                html, body {
-                    padding: 10px 0 0 0;
-                    height: 100%;
-                }
-
-                .container {
-                    display: flex;
-                    flex-direction: column;
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.2);
-                    border-radius: 2px;
-                    padding: 12px;
-                    height: 85%;
-                }
-                .container__main {
-                    /* Take the remaining height */
-                    flex-grow: 1;
-                    width: 100%;
-
-                    /* Layout the left sidebar, main content and right sidebar */
-                    display: flex;
-                    flex-direction: row;
-                }
-                .container__left {
-                    border: #B0413E 2px;
-                    width: 25%;
-                    margin-right: 10px;
-                }
-                .container__middle {
-                    /* Take the remaining width */
-                    flex-grow: 1;
-                }
-                .container {
-
-                    /* Align sub-items to top */
-                    align-items: start;
-                    display: flex;
-                }
-                .container__media {
-                    margin-right: 16px;
-
-                    /* Set the width for the media object */
-                    width: 200px;
-                }
-
-                .container__content {
-                    /* Take the remaining width */
-                    flex: 1;
-                }
-                .menu {
-                    display: flex;
-                    flex-direction: column;
-                    padding:2px 10px 2px 10px;
-
-                    /* Border */
-                    border: 1px solid rgba(0, 0, 0, 0.3);
-                    border-radius: 4px;
-                }
-
-                .menu__item {
-                    /* Center the content horizontally */
-                    align-items: center;
-                    display: flex;
-                }
-
-                .menu__hotkey {
-                    /* Push the hot key to the right */
-                    margin-left: auto;
-                }
-
-                .menu__divider {
-                    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-                    height: 1px;
-                }
-            </style>
+        <link rel="stylesheet" href="/css/base.css">
         {% endblock %}
-
-
     </head>
     <body>
 
     <div class="container">
         <header>
-            Logo
+            <a href="{{ path('page_index') }}">Logo</a>
         </header>
         <main class="container__main">
             <!-- Left sidebar -->
@@ -105,7 +25,7 @@
                     <!-- With hot key -->
                     <div class="menu__item">
                         <!-- Label -->
-                        <p><a href="{{ path('site_page') }}">Pages</a> </p>
+                        <p><a href="{{ path('page_detail') }}">Pages</a> </p>
                         <!-- Hot key -->
                         {#<div class="menu__hotkey">
                             Menu Active
@@ -116,20 +36,7 @@
             <!-- Main content -->
             <article class="container__middle">
                 <h1>{% block h1 %}{% endblock %}</h1>
-
-                {% for type, messages in app.session.flashbag.all() %}
-                    {% for message in messages %}
-                        {% if type == constant('SymfonySimpleSite\\Page\\Controller\\AbstractPageController::FLUSH_ERROR_KEY') %}
-                            <p>Error!</p> <p>{{ message }}</p>
-                        {% endif %}
-
-                        {% if type == constant('SymfonySimpleSite\\Page\\Controller\\AbstractPageController::FLUSH_SUCCESS_KEY') %}
-                            <p>Success!</p> <p>{{ message }}</p>
-                        {% endif %}
-
-                    {% endfor %}
-                {% endfor %}
-
+                {% include '@Page/elements/flash_message.html.twig' %}
                 {% block body %}{% endblock %}
             </article>
 
