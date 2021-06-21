@@ -26,10 +26,32 @@
                     <div class="menu__item">
                         <!-- Label -->
                         <p><a href="{{ path('page_detail') }}">Pages</a> </p>
-                        <!-- Hot key -->
-                        {#<div class="menu__hotkey">
-                            Menu Active
-                        </div>#}
+                        {% if app.user != null %}
+                            <div class="menu__hotkey">
+                                <a href="{{ path('admin_page_index') }}">edit</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="menu__item">
+                       {% if app.user == null %}
+                        <p>
+                            <a href="{{ path('user_login') }}" data-target="#login-box" class="back-to-login-link">
+                                <i class="ace-icon fa fa-arrow-left"></i>
+                                Login
+                            </a> /
+                            <a href="{{ path('user_registration') }}" data-target="#login-box" class="back-to-login-link">
+                                <i class="ace-icon fa fa-arrow-left"></i>
+                                Registration
+                            </a>
+                        </p>
+                        {% else %}
+                            <p>
+                                <a href="{{ path('user_logout') }}" data-target="#login-box" class="back-to-login-link">
+                                    <i class="ace-icon fa fa-arrow-left"></i>
+                                    Logout
+                                </a>
+                            </p>
+                        {% endif %}
                     </div>
                 </div>
             </aside>

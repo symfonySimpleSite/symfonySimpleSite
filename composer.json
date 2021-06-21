@@ -12,6 +12,7 @@
         "doctrine/doctrine-bundle": "^2.3",
         "doctrine/doctrine-migrations-bundle": "^3.1",
         "doctrine/orm": "^2.8",
+        "imagine/imagine": "^1.2",
         "knplabs/knp-paginator-bundle": "^5.5",
         "phpdocumentor/reflection-docblock": "^5.2",
         "sensio/framework-extra-bundle": "^5.1",
@@ -41,6 +42,7 @@
         "symfony/validator": "5.2.*",
         "symfony/web-link": "5.2.*",
         "symfony/yaml": "5.2.*",
+        "symfonycasts/verify-email-bundle": "^1.5",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },
@@ -63,7 +65,9 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "SymfonySimpleSite\\Page\\": "bundles/Page/src/"
+            "SymfonySimpleSite\\Common\\": "bundles/Common/src/",
+            "SymfonySimpleSite\\Page\\": "bundles/Page/src/",
+            "SymfonySimpleSite\\User\\": "bundles/User/src/"
         }
     },
     "autoload-dev": {
