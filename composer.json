@@ -66,9 +66,11 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/",
-            "SymfonySimpleSite\\Common\\": "bundles/Common/src/",
-            "SymfonySimpleSite\\Page\\": "bundles/Page/src/",
-            "SymfonySimpleSite\\User\\": "bundles/User/src/"
+            "SymfonySimpleSite\\Common\\": "bundles/common/src/",
+            "SymfonySimpleSite\\Page\\": "bundles/page/src/",
+            "SymfonySimpleSite\\User\\": "bundles/user/src/",
+            "SymfonySimpleSite\\NestedSets\\": "bundles/nestedsets/src/",
+            "SymfonySimpleSite\\Menu\\": "bundles/menu/src/"
         }
     },
     "autoload-dev": {

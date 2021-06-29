@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@symfony/stimulus-bridge": "^2.1.0",
+    "@symfony/stimulus-bridge": "^2.0.0",
     "@symfony/webpack-encore": "^1.5.0",
     "bootstrap": "^5.0.1",
     "jquery": "^3.6.0",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "core-js": "^3.15.1",
+    "jstree": "^3.3.11",
     "sass-migrator": "^1.5.0"
   }
 }
