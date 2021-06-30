@@ -11,6 +11,7 @@
     "webpack-notifier": "^1.6.0"
   },
   "dependencies": {
+    "admin-lte": "^3.1.0",
     "core-js": "^3.15.1",
     "jstree": "^3.3.11",
     "sass-migrator": "^1.5.0"

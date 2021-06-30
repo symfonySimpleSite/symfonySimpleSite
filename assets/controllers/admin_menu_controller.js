@@ -1,10 +1,13 @@
 import jstree from 'jstree';
 
 $(function () {
-    $('#menu-jstree1').jstree({
+    $('.menu-tree1').jstree({
         'open_all' : true,
-        "plugins" : [ "wholerow", "changed" ],
-
+        "plugins" : [ "wholerow", "changed" , "checkbox"],
+        "checkbox": {
+            'deselect_all': true,
+            'three_state' : false,
+        },
         "core" : {
             "multiple" : false,
             "animation" : 0
