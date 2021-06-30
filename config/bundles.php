@@ -14,6 +14,8 @@ return [
     Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
     SymfonySimpleSite\Page\PageBundle::class => ['all' => true],
     SymfonySimpleSite\User\UserBundle::class => ['all' => true],
+    SymfonySimpleSite\NestedSets\NestedSetsBundle::class => ['all' => true],
+    SymfonySimpleSite\Menu\MenuBundle::class => ['all' => true],
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     SymfonyCasts\Bundle\VerifyEmail\SymfonyCastsVerifyEmailBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
