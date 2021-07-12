@@ -57,7 +57,7 @@
         </div>
     </header>
 
-    {{ render(controller('SymfonySimpleSite\\Menu\\Controller\\MenuController::topMenu', {rootId: 1})) }}
+    {{ render(controller('SymfonySimpleSite\\Menu\\Controller\\MenuController::topMenu')) }}
 
 </div>
 
@@ -108,8 +108,7 @@
         <div class="col-md-3">
             <div class="position-sticky" style="top: 2rem;">
                 {{ render(controller('SymfonySimpleSite\\Menu\\Controller\\MenuController::leftMenu', {
-                    request: app.request,
-                    rootId: 1
+                    request: app.request
                 })) }}
             </div>
         </div>
